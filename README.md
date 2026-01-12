@@ -65,6 +65,8 @@ The ``VirtualPet`` class may contain: (1) a mechanism for buying or otherwise ob
 ### Games
 The Game that the user can play with the VirtualPet must be implemented. It is recommended to create a class for this implementation. The Game must have methods that can take some form of user input, and have a way to increase happiness and decrease weight for the VirtualPet--like taking a dog to the park!
 
+There should also be a way to "win" the game, and if the game is won, it should increase the pet's happiness! You should create a method ``isWinner()`` that returns a boolean value that is ``true`` if the game was won and ``false`` if the game was lost.
+
 A version of the ``play()`` method should be created to interact with instances of the Game class. **Do not delete your original play() method!**
 
 ### The GUI
