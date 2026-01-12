@@ -1,5 +1,5 @@
 import java.util.Scanner;
-/* remove comment for part C
+/* Uncomment to start automatic stat decay
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -42,7 +42,7 @@ public class VirtualPetRunner
         
     VirtualPet myPet = new VirtualPet("Coco");
        
-    /*  Remove comment for part C
+    /*  Uncomment to start automatic stat decay
     // Sets up a ScheduledExecutorService object that will call updateStatus
     // every 1 minute.
     ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
@@ -51,7 +51,7 @@ public class VirtualPetRunner
     */
 
     System.out.println(myPet);
-    printPet("ᵔ");
+    printPet("^");
         
     int choice = getChoice(input);
     while (choice != 4)
@@ -61,32 +61,32 @@ public class VirtualPetRunner
         System.out.println(myPet);
       }
       else if (choice == 2)
-      {   /* remove comment for part B
+      {   
         myPet.feed();
         System.out.println("\n\nYou have fed " + myPet.getName());
-      */
+      
       }
       else if (choice == 3)
-      {   /* remove comment for part C
+      {
         myPet.play();
         System.out.println("\n\nYou have played with " + myPet.getName());
-        */                     
+                      
        }
-       /* remove comment for part B
+       
        if (myPet.getEnergyLevel() >= 5  && myPet.getHappinessLevel() >= 5)
        {
-         printPet("ᵕ");
+         printPet("v");
        }
        else
        {
-         printPet("ᵔ");
+         printPet("^");
        }
-       */
+       
            
        System.out.println(myPet.getName().toUpperCase());
        choice = getChoice(input);
      }
-     /* remove comment for part C
+     /* Uncomment to start automatic stat decay
      scheduler.shutdown();
      */
   }

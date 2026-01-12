@@ -39,7 +39,7 @@ public class VirtualPetGUIRunner
     private String info;
     private int timerSeconds, animationTimerSeconds;
     private boolean isEating, isPlaying;
-    private VirtualPet pet3;
+    private VirtualPet pet2;
     private ImageIcon imageHappy, imageSad, imageEat, imagePlay;
     private JFrame frame;
     private JPanel petPanel, menuPanel, mainPanel, statsPanel, timerPanel;
@@ -51,12 +51,12 @@ public class VirtualPetGUIRunner
     
     public VirtualPetGUIRunner(String name) 
     {
-        pet3 = new VirtualPet(name);
+        pet2 = new VirtualPet(name);
         isPlaying = isEating = false;
         
         // Automatically calls update after INTERVAL_IN_SECONDS time
         ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-        scheduler.scheduleAtFixedRate(() -> { pet3.updateStatus(); }, INTERVAL_IN_SECONDS, INTERVAL_IN_SECONDS, TimeUnit.SECONDS);
+        scheduler.scheduleAtFixedRate(() -> { pet2.updateStatus(); }, INTERVAL_IN_SECONDS, INTERVAL_IN_SECONDS, TimeUnit.SECONDS);
         
         // Calls helper methods to initialize components of GUI
         initPetDisplayPanel();
@@ -106,12 +106,11 @@ public class VirtualPetGUIRunner
     // Initializes the panel that contains the information text
     public void initStatsPanel()
     {
-        info = "" + pet3.toString().replaceAll("\n", "
-") + "";
+        info = "" + pet2.toString().replaceAll("\n", "") + "";
         statsLabel = new JLabel(info);
         statsLabel.setBorder(BorderFactory.createEmptyBorder(0, 15, 15, 0));
         
-        messageLabel = new JLabel("Happy Birthday, " + pet3.getName() + "!");
+        messageLabel = new JLabel("Happy Birthday, " + pet2.getName() + "!");
         messageLabel.setForeground(Color.blue);
         messageLabel.setBorder(BorderFactory.createEmptyBorder(0, 15, 15, 0));
         
@@ -145,14 +144,13 @@ public class VirtualPetGUIRunner
                 int minutes = timerSeconds / 60;
                 int remainingSeconds = timerSeconds % 60;
                 timerLabel.setText(String.format("%02d:%02d", minutes, remainingSeconds));
-                info = "" + pet3.toString().replaceAll("\n", "
-") + "";
+                info = "" + pet2.toString().replaceAll("\n", "") + "";
                 statsLabel.setText(info);
                 if(!isPlaying && !isEating)
                 {
-                    if((ImageIcon)petLabel.getIcon() != imageSad && (pet3.getEnergyLevel() < 5 || pet3.getHappinessLevel() < 5))
+                    if((ImageIcon)petLabel.getIcon() != imageSad && (pet2.getEnergyLevel() < 5 || pet2.getHappinessLevel() < 5))
                         petLabel.setIcon(imageSad);
-                    else if((ImageIcon)petLabel.getIcon() != imageHappy && (pet3.getEnergyLevel() >= 5 && pet3.getHappinessLevel() >= 5))
+                    else if((ImageIcon)petLabel.getIcon() != imageHappy && (pet2.getEnergyLevel() >= 5 && pet2.getHappinessLevel() >= 5))
                         petLabel.setIcon(imageHappy);
                 }
             }
@@ -166,9 +164,9 @@ public class VirtualPetGUIRunner
     // Initializes the Menu Bar that allows you to create a new Virtual Pet
     public void initMenuBar()
     {
-        petRunner3 = new JMenuItem("Activity 3");
-        petRunner3.addActionListener(new NewPet3Listener());
-        petRunner4 = new JMenuItem("Activity 4");
+        petRunner3 = new JMenuItem("Activity 2");
+        petRunner3.addActionListener(new Newpet2Listener());
+        petRunner4 = new JMenuItem("Activity 3");
         petRunner4.addActionListener(new NewPet4Listener());
         newPetMenu = new JMenu("New Pet");
         newPetMenu.add(petRunner3);
@@ -207,10 +205,9 @@ public class VirtualPetGUIRunner
     {
         public void actionPerformed(ActionEvent e) 
         {
-            pet3.feed();
-            messageLabel.setText("You have fed " + pet3.getName());
-            info = "" + pet3.toString().replaceAll("\n", "
-") + "";
+            pet2.feed();
+            messageLabel.setText("You have fed " + pet2.getName());
+            info = "" + pet2.toString().replaceAll("\n", "") + "";
             statsLabel.setText(info);
             animationTimerSeconds = 0;
             animationTimerSeconds = 0;
@@ -223,7 +220,7 @@ public class VirtualPetGUIRunner
                     animationTimerSeconds++;
                     if(animationTimerSeconds >= 2)
                     {
-                        if(pet3.getEnergyLevel() < 5 || pet3.getHappinessLevel() < 5)
+                        if(pet2.getEnergyLevel() < 5 || pet2.getHappinessLevel() < 5)
                             petLabel.setIcon(imageSad);
                         else
                             petLabel.setIcon(imageHappy);
@@ -241,10 +238,9 @@ public class VirtualPetGUIRunner
     {
         public void actionPerformed(ActionEvent e) 
         {
-            pet3.play();
-            messageLabel.setText("You have played with " + pet3.getName());
-            info = "" + pet3.toString().replaceAll("\n", "
-") + "";
+            pet2.play();
+            messageLabel.setText("You have played with " + pet2.getName());
+            info = "" + pet2.toString().replaceAll("\n", "") + "";
             statsLabel.setText(info);
             animationTimerSeconds = 0;
             isPlaying = true;
@@ -256,7 +252,7 @@ public class VirtualPetGUIRunner
                     animationTimerSeconds++;
                     if(animationTimerSeconds >= 2)
                     {
-                        if(pet3.getEnergyLevel() < 5 || pet3.getHappinessLevel() < 5)
+                        if(pet2.getEnergyLevel() < 5 || pet2.getHappinessLevel() < 5)
                             petLabel.setIcon(imageSad);
                         else
                             petLabel.setIcon(imageHappy);
@@ -269,8 +265,8 @@ public class VirtualPetGUIRunner
         }
     }
     
-    // Defines the action when a New Pet from Activity 3 is clicked
-    class NewPet3Listener implements ActionListener
+    // Defines the action when a New Pet from Activity 2 is clicked
+    class Newpet2Listener implements ActionListener
     {
         public void actionPerformed(ActionEvent e) 
         {
@@ -287,18 +283,18 @@ public class VirtualPetGUIRunner
         }
     }
     
-    // Defines the action when a New Pet from Activity 4 is clicked
+    // Defines the action when a New Pet from Activity 3 is clicked
     class NewPet4Listener implements ActionListener
     {
         public void actionPerformed(ActionEvent e) 
         {
-		// "Uncomment" code when you complete Activity 4 and include
-		// VirtualPetGUIRunner4 in your project
+		// "Uncomment" code when you complete Activity 3 and include
+		// VirtualPetGUIRunner3 in your project
 		/*
             try
             {
                 String input = JOptionPane.showInputDialog("Enter your virtual pet's name:");
-                VirtualPetGUIRunner4 init = new VirtualPetGUIRunner4(input);
+                VirtualPetGUIRunner3 init = new VirtualPetGUIRunner3(input);
                 frame.dispose();
             }
             catch(Exception err)
