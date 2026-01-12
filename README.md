@@ -63,7 +63,7 @@ A version of the ``feed()`` method in the VirtualPet class should be created to 
 The ``VirtualPet`` class may contain: (1) a mechanism for buying or otherwise obtaining Food objects; (2) a mechanism for viewing different kinds of Food objects that may be available to the player; (3) a mechanism for selecting which Food object to give a VirtualPet OR a random selection mechanism for feeding a VirtualPet; (4) a mechanism for maintaining an inventory of Food objects that a player or VirtualPet can use. Select at least one of these ideas, or come up with your own variation to enhance your gameplay! Make it as simple or as complex as you'd like.
 
 ### Games
-The Game that the user can play with the VirtualPet must be implemented. It is recommended to create a class for this implementation. The Game must have methods that can take some form of user input, and have a way to increase happiness and decrease weight for the VirtualPet--like taking a dog to the park!
+The Game that the user can play with the VirtualPet must be implemented. It is recommended to create a class for this implementation. The Game must have methods that can take some form of user input or use some form of randomness, and have a way to increase happiness and decrease weight for the VirtualPet--like taking a dog to the park!
 
 There should also be a way to "win" the game, and if the game is won, it should increase the pet's happiness! You should create a method ``isWinner()`` that returns a boolean value that is ``true`` if the game was won and ``false`` if the game was lost.
 
