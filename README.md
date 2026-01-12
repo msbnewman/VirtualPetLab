@@ -41,13 +41,24 @@ Your implementation must also include the following methods.
 
 ``play()``, which increases the happiness level of the pet by 1 and decreases the weight of the pet by 1. For now, the happiness level must always be in the range of 0–10, inclusive, and the weight of the pet must not fall below the minimum value of 5.  
 
+**Test your code at this point! Then come back to implement ``updateStatus()``**
+
 ``updateStatus()``, which decreases the happiness and energy level of the pet by 1. For now, the energy and happiness levels must always be in the range of 0–10, inclusive. This will also increase the pet’s age by 1 month. If 12 months have elapsed, then the age in years should be changed by 1.  
 
 ***This is a starting point! You may want to include more methods than this in your implementation!***  
 
-### Evaluation
-Test your program by running the VirtualPetRunner and choosing each of the menu selections. updateStatus() is called every 10 seconds automatically, meaning your pet will age a month every 10 seconds. After 2 minutes, your pet should age a year. You can change the variable INTERVAL_IN_SECONDS to test at a different speed. 
+### Evaluation & Testing Your Code
+Test your program before implementing ``updateStatus()`` by running the VirtualPetRunner and choosing each of the menu selections.  
 
+Once you've tested all of your methods and are ready to use ``updateStatus()``, search your code for the phrase "Uncomment". Remove the comments around all **three (3)** chunks of code to enable ``updateStatus()`` to run. DO NOT DELETE THE CODE -- just remove the comments!  
+
+Now, ``updateStatus()`` will be called every 10 seconds automatically, meaning your pet will age a month, lose 1 happiness, and lose 1 energy every 10 seconds. After 2 minutes, your pet should age a year. You can change the variable INTERVAL_IN_SECONDS to test at a different speed. 
+
+### The GUI
+
+Starting in this section, you may use the VirtualPetGUIRunner. A GUI (Graphical User Interface) can generate a visually interesting, interactive user experience known as a front-end. BE CAREFUL when editing the GUIRunner, and make sure to save your work, commit your changes often, and test each change to ensure that your program still functions.
+
+Even though it makes your project a lot cooler, the GUI is not required to submit your project! However, a working VirtualPetRunner **is** required for submission. Focus on testing your code with the normal VirtualPetRunner before implementing the GUI.
 
 ## VirtualPet2: Food and Games
 
@@ -69,9 +80,15 @@ There should also be a way to "win" the game, and if the game is won, it should 
 
 A version of the ``play()`` method should be created to interact with instances of the Game class. **Do not delete your original play() method!**
 
+### Evaluating & Testing your Code
+
+The VirtualPetRunner *will **need** to be updated in order to work with your new code!*. Make sure that you edit the VirtualPetRunner in order to use your new Food and Game classes, and call your new play() and feed() methods appropriately.
+
 ### The GUI
 
-Starting in this section, you may use the VirtualPetGUIRunner. A GUI (Graphical User Interface) can generate a visually interesting, interactive user experience known as a front-end. BE CAREFUL when editing the GUIRunner, and make sure to save your work, commit your changes often, and test each change to ensure that your program still functions.
+Starting in this section, you may use the VirtualPetGUIRunner3. VirtualPetGUIRunner3 *will **need** to be updated in order to work with your code*. BE CAREFUL when editing the GUIRunner3, and make sure to save your work, commit your changes often, and test each change to ensure that your program still functions.
+
+The GUI is not required to submit your project! However, a working VirtualPetRunner **is** required for submission. Focus on testing your code with the normal VirtualPetRunner before implementing the GUI.
 
 ## VirtualPet3: Additional Features
 
