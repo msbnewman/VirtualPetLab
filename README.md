@@ -1,6 +1,6 @@
 # VirtualPetLab 
 
-In this lab, you will design and implement a set of Java classes to represent a Virtual Pet based on the popular '90s Tamagotchi game.  
+In this lab, you will design and implement a set of Java classes to represent a Virtual Pet based on the popular '90s Tamagotchi game. The instructions in this guide describe the minimum acceptable criteria for a lab submission. You will need to expand upon the tasks described below in order to implement your proposed design.  
 
 ## VirtualPet1: Simple Pet
 
@@ -84,9 +84,11 @@ A version of the ``play()`` method should be created to interact with instances 
 
 The VirtualPetRunner *will **need** to be updated in order to work with your new code!*. Make sure that you edit the VirtualPetRunner in order to use your new Food and Game classes, and call your new play() and feed() methods appropriately.
 
-### The GUI
+### The GUI3
 
-Starting in this section, you may use the VirtualPetGUIRunner3. VirtualPetGUIRunner3 *will **need** to be updated in order to work with your code*. BE CAREFUL when editing the GUIRunner3, and make sure to save your work, commit your changes often, and test each change to ensure that your program still functions.
+Starting in this section, you may use the VirtualPetGUIRunner3.  
+**--> VirtualPetGUIRunner3 *will need to be updated* in order to work with your code. <--**  
+BE CAREFUL when editing the GUIRunner3, and make sure to save your work, commit your changes often, and test each change to ensure that your program still functions.
 
 The GUI is not required to submit your project! However, a working VirtualPetRunner **is** required for submission. Focus on testing your code with the normal VirtualPetRunner before implementing the GUI.
 
